@@ -14,13 +14,19 @@
     programs = {
         fish.enable = true;
     };
+    # programs.git = {
+    #     enable = true;
+    #     userName  = "John Doe";
+    #     userEmail = "johndoe@example.com";
+    # };
 
     environment.systemPackages = with pkgs; [
         # system
         wget
-        git
         htop
         neofetch
+        git
+        python
 
         # server
         screen
