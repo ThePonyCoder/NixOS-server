@@ -142,11 +142,16 @@
                     "npu" = "nix-prefetch-url --unpack";
                     "freboot" = "sudo systemctl kexec";
                     "lsconf" = "sudo nix-env --list-generations --profile /nix/var/nix/profiles/system";
-                    "updconf" = "git add . & git commit -m . & git push origin master";
+                    # "updconf" = "git add . & git commit -m . & git push origin master";
 
                 };
                 functions = {
                     fish_greeting = "neofetch";
+                    updconf = ''
+                        git add .
+                        git commit -m "$argv"
+                        git push origin master
+                    '';
                 };
                 interactiveShellInit = "set -l OMF_PATH /nix/store/lvdhqk4qpb9v2rvv3rwjc0540knpxsk5-source";
                 plugins = [
