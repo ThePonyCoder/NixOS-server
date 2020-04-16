@@ -146,12 +146,11 @@
                 functions = {
                     fish_greeting = "neofetch";
                     updconf = ''
-                        git --git-dir=/etc/nixos/.git --work-tree=/etc/nixos add .
+                        git --git-dir="/etc/nixos/.git" --work-tree=/etc/nixos add -A
                         git --git-dir=/etc/nixos/.git --work-tree=/etc/nixos commit -m "$argv"
                         git --git-dir=/etc/nixos/.git --work-tree=/etc/nixos push origin master
                     '';
                 };
-                interactiveShellInit = "set -l OMF_PATH /nix/store/lvdhqk4qpb9v2rvv3rwjc0540knpxsk5-source";
                 plugins = [
 
                 	# {
