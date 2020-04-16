@@ -22,7 +22,6 @@
     };
 
     nixpkgs.config.allowUnfree = true;
-    # nixpkgs.config.allowBroken = true;
     environment.systemPackages = with pkgs; [
         # system
         wget
@@ -32,7 +31,6 @@
         python3
         lm_sensors
         bsod
-        # haskellPackages.update-nix-fetchgit
 
 
         # server
@@ -148,25 +146,13 @@
                 functions = {
                     fish_greeting = "neofetch";
                     updconf = ''
-                        git --git-dir=/etc/nixos/.git --work-tree=/etc/nixos /etc/nixos add .
+                        git --git-dir=/etc/nixos/.git --work-tree=/etc/nixos add .
                         git --git-dir=/etc/nixos/.git --work-tree=/etc/nixos commit -m "$argv"
                         git --git-dir=/etc/nixos/.git --work-tree=/etc/nixos push origin master
                     '';
                 };
                 interactiveShellInit = "set -l OMF_PATH /nix/store/lvdhqk4qpb9v2rvv3rwjc0540knpxsk5-source";
                 plugins = [
-                    # {
-                    #     name = "oh-my-fish";
-                    #     src = pkgs.fetchFromGitHub {
-                    #       owner = "oh-my-fish";
-                    #       repo = "oh-my-fish";
-                    #       rev = "v7";
-                    #       sha256 = "12qin0i6z7g6kyb3cahazd024jy3smmm161pich7zpmpb5sma8vq";
-                    #     };
-                    # }
-
-
-
                 	# {
                 	#     name = "theme-l";
                 	#     src = pkgs.fetchFromGitHub {
@@ -202,10 +188,6 @@
                         src = fetchGit {
                             url = "https://github.com/ThePonyCoder/fish-plugins.git";
                             ref = "master";
-                            # owner = "ThePonyCoder";
-                            # repo = "fish-plugins";
-                            # rev = "master";
-                          # sha256 = "1an12jj01p45d1rdj05bkw6nlchcrwkl04bg7bcgladm3hc8z9wh";
                         };
                     }
 
