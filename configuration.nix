@@ -4,10 +4,7 @@
 {
     imports =[
         ./hardware-configuration.nix
-        # (import "${builtins.fetchTarball https://github.com/rycee/home-manager/archive/release-19.09.tar.gz}/nixos")
         (import "${builtins.fetchTarball https://github.com/rycee/home-manager/archive/release-20.03.tar.gz}/nixos")
-
-        # <home-manager/nixos>
     ];
 
     boot.loader.systemd-boot.enable = true;
@@ -140,8 +137,6 @@
                     "npu" = "nix-prefetch-url --unpack";
                     "freboot" = "sudo systemctl kexec";
                     "lsconf" = "sudo nix-env --list-generations --profile /nix/var/nix/profiles/system";
-                    # "updconf" = "git add . & git commit -m . & git push origin master";
-
                 };
                 functions = {
                     fish_greeting = "neofetch";
@@ -163,26 +158,6 @@
                 	#     };
                 	# }
 
-                    # {
-                    #     name = "fundle";
-                    #     src = pkgs.fetchFromGitHub {
-                    #       owner = "danhper";
-                    #       repo = "fundle";
-                    #       rev = "v0.7.0";
-                    #       sha256 = "1i58hbvpjc7c7hi99hhvw5qmgjpcj1k7rij9mijpjiwi59ng72a2";
-                    #     };
-                    # }
-
-                    # {
-                    #     name = "fisher";
-                    #     src = pkgs.fetchFromGitHub {
-                    #       owner = "ThePonyCoder";
-                    #       repo = "fisher";
-                    #       rev = "master";
-                    #       sha256 = "1d9kgfc0fmy7gwlavk6ibq478nyjyc2vmg59hfj3hq84ppma966y";
-                    #     };
-                    # }
-
                     {
                         name = "fish-plugins";
                         src = fetchGit {
@@ -190,18 +165,6 @@
                             ref = "master";
                         };
                     }
-
-                    # {
-                    #     name = "theme-qing";
-                    #     src = pkgs.fetchFromGitHub {
-                    #       owner = "oh-my-fish";
-                    #       repo = "theme-qing";
-                    #       rev = "master";
-                    #       sha256 = "1nzi0sjj4j7pq3c20fblccrxqg6gwnrj85p4j1smsnwj6w2s4cxf";
-                    #     };
-                    # }
-
-
                 ];
             };
         };
