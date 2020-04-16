@@ -24,6 +24,7 @@
         lm_sensors
         bsod
 
+        # gui
 
         # server
         screen
@@ -39,6 +40,7 @@
     services.openssh = {
         enable = true;
         permitRootLogin = "yes";
+        forwardX11 = true;
     };
 
     services.transmission = {
