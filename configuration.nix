@@ -142,6 +142,7 @@
                     "npu" = "nix-prefetch-url --unpack";
                     "freboot" = "sudo systemctl kexec";
                     "lsconf" = "sudo nix-env --list-generations --profile /nix/var/nix/profiles/system";
+                    "updconf" = "git add . & git commit -m . & git push origin master";
 
                 };
                 functions = {
