@@ -148,9 +148,9 @@
                 functions = {
                     fish_greeting = "neofetch";
                     updconf = ''
-                        git add .
-                        git commit -m "$argv"
-                        git push origin master
+                        git --git-dir /etc/nixos add .
+                        git --git-dir /etc/nixos commit -m "$argv"
+                        git --git-dir /etc/nixos push origin master
                     '';
                 };
                 interactiveShellInit = "set -l OMF_PATH /nix/store/lvdhqk4qpb9v2rvv3rwjc0540knpxsk5-source";
