@@ -31,7 +31,6 @@
         git
         python3
         lm_sensors
-        nix-prefetch-git
         bsod
         # haskellPackages.update-nix-fetchgit
 
