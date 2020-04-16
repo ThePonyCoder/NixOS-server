@@ -153,6 +153,7 @@
                 };
                 interactiveShellInit = "set -l OMF_PATH /nix/store/lvdhqk4qpb9v2rvv3rwjc0540knpxsk5-source";
                 plugins = [
+
                 	# {
                 	#     name = "theme-l";
                 	#     src = pkgs.fetchFromGitHub {
