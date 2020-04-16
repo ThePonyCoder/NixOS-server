@@ -134,6 +134,7 @@
                 enable = true;
                 shellAliases = {
                     "nrb" = "sudo nixos-rebuild switch";
+                    "nrbc" = "sudo nixos-rebuild switch & updconf";
                     "npu" = "nix-prefetch-url --unpack";
                     "freboot" = "sudo systemctl kexec";
                     "lsconf" = "sudo nix-env --list-generations --profile /nix/var/nix/profiles/system";
@@ -142,8 +143,8 @@
                     fish_greeting = "neofetch";
                     updconf = ''
                         git --git-dir="/etc/nixos/.git" --work-tree=/etc/nixos add -A
-                        git --git-dir=/etc/nixos/.git --work-tree=/etc/nixos commit -m "$argv"
-                        git --git-dir=/etc/nixos/.git --work-tree=/etc/nixos push origin master
+                        git --git-dir="/etc/nixos/.git" --work-tree=/etc/nixos commit -m "$argv"
+                        git --git-dir="/etc/nixos/.git" --work-tree=/etc/nixos push origin master
                     '';
                 };
                 plugins = [
