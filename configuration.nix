@@ -22,6 +22,7 @@
     };
 
     nixpkgs.config.allowUnfree = true;
+    # nixpkgs.config.allowBroken = true;
     environment.systemPackages = with pkgs; [
         # system
         wget
@@ -31,6 +32,9 @@
         python3
         lm_sensors
         nix-prefetch-git
+        bsod
+        # haskellPackages.update-nix-fetchgit
+
 
         # server
         screen
