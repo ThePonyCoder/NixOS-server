@@ -1,6 +1,4 @@
-
 { config, pkgs, ... }:
-
 {
     imports =[
         ./hardware-configuration.nix
@@ -11,21 +9,18 @@
     boot.loader.efi.canTouchEfiVariables = true;
 
     networking.hostName = "nixos";
-
     time.timeZone = "Europe/Minsk";
 
-    programs = {
-        fish.enable = true;
-    };
 
     nixpkgs.config.allowUnfree = true;
+    programs.fish.enable = true;
+
     environment.systemPackages = with pkgs; [
         # system
         wget
         htop
         neofetch
         git
-        python3
         lm_sensors
         bsod
 
@@ -35,8 +30,9 @@
         transmission
 
         # langs
-        (python3.withPackages (py: [ py.requests py.pytest]))
+        (python3.withPackages (py: with py; [ requests pytest ]))
         pipenv
+
     ];
 
     # services
