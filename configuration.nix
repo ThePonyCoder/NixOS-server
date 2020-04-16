@@ -134,7 +134,7 @@
                 enable = true;
                 shellAliases = {
                     "nrb" = "sudo nixos-rebuild switch";
-                    "nrbc" = "sudo nixos-rebuild switch & updconf";
+                    "nrbc" = "sudo nixos-rebuild switch && updconf";
                     "npu" = "nix-prefetch-url --unpack";
                     "freboot" = "sudo systemctl kexec";
                     "lsconf" = "sudo nix-env --list-generations --profile /nix/var/nix/profiles/system";
